@@ -33,13 +33,14 @@ services:
       - app
       - db
 
-  npm:
-    image: node:alpine
-    container_name: npm
+  frontend:
+    build:
+       context: .
+       dockerfile: node-dockerfile
+    container_name: biblioteka-frontend
+    restart: unless-stopped
     volumes:
       - ./:/var/www
+      - /var/www/node_modules
     ports:
-      - 3000:3000
-    working_dir: /var/www
-    profiles: ["npm"]
-    entrypoint: ["npm"]
+      - 3001:3001
