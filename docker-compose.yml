@@ -1,13 +1,7 @@
 version: "3.7"
 services:
   app:
-    build:
-      args:
-        user: student
-        uid: 1000
-      context: ./
-      dockerfile: Dockerfile
-    image: biblioteka
+    image: remjas96/biblioteka:v2.0
     container_name: biblioteka-app
     restart: unless-stopped
     working_dir: /var/www/
