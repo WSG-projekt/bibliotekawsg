@@ -10,11 +10,14 @@ class CreateBooksCollectionTable extends Migration
     {
         Schema::create('books_collection', function (Blueprint $table) {
 		$table->id();
+        $table->unsignedBigInteger('category_id');
 		$table->string('title',100)->nullable()->default('NULL');
 		$table->string('author',100)->nullable()->default('NULL');
-		$table->unsignedBigInteger('category_id');
-        $table->foreign('category_id')->references('id')->on('books_category');
-
+        $table->foreign('category_id')
+            ->references('id')
+            ->on('books_category')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 
