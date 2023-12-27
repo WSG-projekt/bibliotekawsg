@@ -9,14 +9,13 @@ class CreateBorrowedTable extends Migration
     public function up()
     {
         Schema::create('borrowed', function (Blueprint $table) {
-
-		$table->increments('ID_borrow');
-		$table->integer('ID_customer');
-		$table->integer('ID_book');
+		$table->id();
+        $table->unsignedBigInteger('book_id');
+        $table->foreign('book_id')->references('id')->on('books_collection');
+        $table->unsignedBigInteger('customer_id');
+        $table->foreign('customer_id')->references('id')->on('customer');
 		$table->date('rental_date');
 		$table->date('return_date');
-		$table->unique('ID_customer');
-		$table->unique('ID_book');
         });
     }
 

@@ -9,10 +9,8 @@ class CreateBooksCategoryTable extends Migration
     public function up()
     {
         Schema::create('books_category', function (Blueprint $table) {
-
-		$table->increments('ID_category');
+		$table->id();
 		$table->string('category_name',100)->nullable()->default('NULL');
-
         });
     }
 

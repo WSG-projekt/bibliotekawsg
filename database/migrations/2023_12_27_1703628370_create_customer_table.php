@@ -10,7 +10,7 @@ class CreateCustomerTable extends Migration
     {
         Schema::create('customer', function (Blueprint $table) {
 
-		$table->increments('ID_customer');
+		$table->id();
 		$table->string('name',50)->nullable()->default('NULL');
 		$table->string('surname',50)->nullable()->default('NULL');
 		$table->string('email',100)->nullable()->default('NULL');
