@@ -8,7 +8,7 @@ class CreateBooksCollectionTable extends Migration
 {
     public function up()
     {
-        Schema::create('books_collection', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
 		$table->id();
         $table->unsignedBigInteger('category_id');
 		$table->string('title',100)->nullable()->default('NULL');
@@ -23,6 +23,6 @@ class CreateBooksCollectionTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('books_collection');
+        Schema::dropIfExists('books');
     }
 }

@@ -11,7 +11,7 @@ class CreateBorrowedTable extends Migration
         Schema::create('borrowed', function (Blueprint $table) {
 		$table->id();
         $table->unsignedBigInteger('book_id');
-        $table->foreign('book_id')->references('id')->on('books_collection');
+        $table->foreign('book_id')->references('id')->on('books');
         $table->unsignedBigInteger('user_id');
         $table->foreign('user_id')->references('id')->on('users');
 		$table->date('rental_date');
