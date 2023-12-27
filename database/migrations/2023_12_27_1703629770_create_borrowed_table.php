@@ -12,8 +12,8 @@ class CreateBorrowedTable extends Migration
 		$table->id();
         $table->unsignedBigInteger('book_id');
         $table->foreign('book_id')->references('id')->on('books_collection');
-        $table->unsignedBigInteger('customer_id');
-        $table->foreign('customer_id')->references('id')->on('customer');
+        $table->unsignedBigInteger('user_id');
+        $table->foreign('user_id')->references('id')->on('users');
 		$table->date('rental_date');
 		$table->date('return_date');
         });
