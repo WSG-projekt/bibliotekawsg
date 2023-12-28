@@ -13,6 +13,7 @@ return new class extends Migration
         $table->unsignedBigInteger('genre_id');
 		$table->string('title');
 		$table->string('author');
+        $table->timestamps();
         $table->foreign('genre_id')
             ->references('id')
             ->on('genres')

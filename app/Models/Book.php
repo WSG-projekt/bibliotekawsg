@@ -11,12 +11,21 @@ class Book extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'author',
-        'genre_id'
+        'author'
     ];
 
     public function genre(): BelongsTo
     {
         return $this->belongsTo(Genre::class);
     }
+
+    public function reservations()
+    {
+        return $this->belongsToMany(Reservation::class, 'reservations_books');
+    }
+    public function rentals()
+    {
+        return $this->belongsToMany(Rental::class, 'rentals_books');
+    }
+
 }

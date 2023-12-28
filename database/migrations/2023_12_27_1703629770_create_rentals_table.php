@@ -10,12 +10,13 @@ return new class extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
 		$table->id();
-        $table->unsignedBigInteger('book_id');
-        $table->foreign('book_id')->references('id')->on('books');
         $table->unsignedBigInteger('user_id');
-        $table->foreign('user_id')->references('id')->on('users');
+        $table->foreign('user_id')->references('id')->on('users')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
 		$table->date('rental_date');
 		$table->date('return_date');
+        $table->timestamps();
         });
     }
 
