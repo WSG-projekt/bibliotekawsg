@@ -6,20 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Books extends Model
+class Book extends Model
 {
     use HasFactory;
     protected $fillable = [
         'title',
         'author',
-        'category_id'
+        'genre_id'
     ];
-    protected $table = 'books';
-    protected $primaryKey = 'id';
 
-
-    public function booksCategory(): BelongsTo
+    public function genre(): BelongsTo
     {
-        return $this->belongsTo(BooksCategory::class);
+        return $this->belongsTo(Genre::class);
     }
 }

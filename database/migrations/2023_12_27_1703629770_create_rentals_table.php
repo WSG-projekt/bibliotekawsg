@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBorrowedTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('borrowed', function (Blueprint $table) {
+        Schema::create('rentals', function (Blueprint $table) {
 		$table->id();
         $table->unsignedBigInteger('book_id');
         $table->foreign('book_id')->references('id')->on('books');
@@ -19,8 +19,8 @@ class CreateBorrowedTable extends Migration
         });
     }
 
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('borrowed');
+        Schema::dropIfExists('rentals');
     }
-}
+};
