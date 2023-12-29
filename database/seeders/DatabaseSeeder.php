@@ -9,6 +9,9 @@ use App\Models\Reservation;
 use App\Models\User;
 use App\Models\Student;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +21,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(10)->create();
+        DB::table('users')->insert([
+            'name' => 'Admin',
+            'email' =>'admin@admin.com',
+            'email_verified_at' => now(),
+            'remember_token' => Str::random(10),
+            'password' => Hash::make('admin1234'),
+            'isAdmin' => 1
+        ]);
         Book::factory(10)->create();
         Reservation::factory(10)->create();
         Rental::factory(10)->create();
