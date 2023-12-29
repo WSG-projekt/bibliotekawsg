@@ -25,6 +25,9 @@
                     <td>{{$user->email}}</td>
                     <td>{{$user->name}}</td>
                     <td>
+                        <a href="{{route('users.show',$user->id)}}">
+                            <button class="btn btn-primary btn-sm"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        </a>
                         <button class="btn delete btn-danger btn-sm" data-id="{{$user->id}}"><i class="fa-solid fa-trash"></i></button>
                     </td>
                 </tr>
