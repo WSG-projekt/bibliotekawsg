@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
 document.addEventListener('DOMContentLoaded', function () {
-    console.log(deleteUrl)
     $(function() {
         $('.delete').click(function (){
             Swal.fire({
