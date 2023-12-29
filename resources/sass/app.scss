@@ -6,4 +6,56 @@
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+ UsersFeature
 @import "@fortawesome/fontawesome-free/css/all.css";
+.welcome{
+  height: 100vh;
+  background-image: url("/public/img/bgImage.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  .container{
+    height: 100%;
+    width: 100%;
+    h1{
+      font-size: 3rem;
+      color: white;
+    }
+  }
+  .card{
+    background-color: lightgray;
+    padding: 1rem;
+  }
+  .card-body{
+    color:#6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    .left{
+      width: 50%;
+      border-right: 1px solid black;
+      p{
+        font-size: 1.5rem;
+        padding: 1rem;
+      }
+    }
+    .right{
+      width: 50%;
+      p{
+        font-size: 1.5rem;
+        padding: 1rem;
+      }
+    }
+    .buttons{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      button{
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}
+dev

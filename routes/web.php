@@ -13,12 +13,20 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+UsersFeature
+
+//administratorzy
+Route::middleware('isAdmin')->group(function () {
 Route::resource('users',UserController::class);
+});
+//zalogowani użytkwonicy
+Route::middleware('auth')->group(function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+});
+ dev
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware("auth");
 
 Auth::routes();
