@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
@@ -76,5 +76,7 @@
             @yield('content')
         </main>
     </div>
+    @yield('javascript')
+    @yield('js-variables')
 </body>
 </html>
