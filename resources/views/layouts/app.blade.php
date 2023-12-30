@@ -60,6 +60,11 @@
                                                      document.getElementById('logout-form').submit();">
                                        Wyloguj
                                     </a>
+                                    @if(Auth::user()->isAdmin)
+                                        <a class="dropdown-item" href="{{ route('users.index') }}">
+                                            Użytkownicy
+                                        </a>
+                                    @endif
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
