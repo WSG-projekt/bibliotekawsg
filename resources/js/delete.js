@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     $(function() {
         $('.delete').click(function (){
             Swal.fire({
-                title: 'Czy na pewno chcesz usunąć rekord?',
+                title: 'Czy na pewno chcesz wykonać tą akcję?',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

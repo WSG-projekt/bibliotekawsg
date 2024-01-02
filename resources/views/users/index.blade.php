@@ -3,9 +3,7 @@
 @section('content')
 
     <div class="container">
-        @if(Session::has('message'))
-            <p class="alert alert-info">{{ Session::get('message') }}</p>
-        @endif
+            @include('components.flash-messages')
         <div class="col-6">
             <h1><i class="fa-solid fa-user-group"></i> Lista Użytkowników</h1>
         </div>

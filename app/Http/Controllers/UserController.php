@@ -27,6 +27,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
+        $user::with(['rentals','reservations'])->get();
         return view('users.show',[
             'user'=>$user
         ]);

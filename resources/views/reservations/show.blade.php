@@ -79,7 +79,7 @@
                                 <div class="col-md-5 mt-3 border-start border-1">
                                     <div class="row mt-2 pb-3">
                                             <div class="col-sm-12">
-                                                <h6 class="mb-0">Książki zarezerwowane przez użytkownika:</h6>
+                                                <h6 class="mb-0">Książki wypożyczone przez użytkownika:</h6>
                                             </div>
                                         </div>
                                         <div class="col-sm-12 text-center">

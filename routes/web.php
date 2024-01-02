@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,10 +19,16 @@ use Illuminate\Support\Facades\Route;
 //administratorzy
 Route::middleware('isAdmin')->group(function () {
 Route::resource('users',UserController::class);
+    Route::resource('reservations', ReservationController::class);
 });
 //zalogowani użytkwonicy
 Route::middleware('auth')->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('reservations',ReservationController::class)->only(
+        [
+            'index','destroy',
+        ]
+    );
 });
 
 Route::get('/', function () {
